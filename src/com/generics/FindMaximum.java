@@ -1,39 +1,46 @@
 package com.generics;
 
 public class FindMaximum {
+
+    //main method
     public static void main(String[] args) {
 
         //1st print welcome msg.
-        System.out.println("Welcome to Find Maximum Problem using Generics");
+        System.out.println("Welcome to Generic Program.");
 
-        //take variables strings
-        String e = "Ahmednagar", f = "Pune" , g = "Mumbai";
+        // variables integer , float , and string
+        Integer a = 20, b = 50, c = 80;
+        Float p = 20.85f, q = 90.55f, r = 80.98f;
+        String e = "Apple", f = "Peach", g = "Banana";
 
         /*
-        calling directly without creating object coz testMaximum method also static.
+        calling generic getMethod directly coz in main method and generics method using static keyword so not needed
+        to create object for class.
          */
-        testMaximum (e,f,g);//calling method
+
+       FindMaximum.getMaximum(a, b, c);
+       FindMaximum.getMaximum(p, q, r);
+       FindMaximum.getMaximum(e, f, g);
     }
 
     /*
-    creating testMaximum method and passing parameter in string type
+  create generic method the Generic Type extends Comparable
      */
-
-    private static void testMaximum(String e, String f, String g) {
-        String max = e;
+    private static <T extends Comparable> void getMaximum(T a, T b, T c) {
 
         /*
-        check condition comparing and finding max string
+        check the condition and finding max for integer string and float
          */
-        if(f.compareTo(e)>0){
-            max = f;
+        T max = a;
+        if (b.compareTo(a) > 0) {
+            max = b;
         }
-        if(g.compareTo(max)>0){
-            max = g;
+        if (c.compareTo(max) > 0) {
+            max = c;
         }
 
-        //print maximum string
-        System.out.println("Maximum String is: "+max);
+        //print maximum no and string
+        System.out.println("Maximum ::" + max);
 
     }
 
