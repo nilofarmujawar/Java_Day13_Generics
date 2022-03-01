@@ -1,31 +1,38 @@
 package com.generics;
 
+
 public class FindMaximum {
 
     public static void main(String[] args) {
-        //1st print welcome msg.
+
+        // 1st print welcome msg.
         System.out.println("Welcome to Find Maximum Problem using Generics");
 
-        //variables
-        Integer a = 20, b = 50, c =80;
-        
-        testMaximum (a,b,c); //calling method
+        //take variable float no.
+        Float p = 20.85f, q = 90.55f, r = 80.98f;
+
+        testMaximum(p, q, r);  //calling method
     }
 
     /*
-    create testMaximum method and passing parameter
+    create testMaximum method and passing parameters.
      */
-    private static void testMaximum(Integer a, Integer b, Integer c) {
-        Integer max = a;
+    private static void testMaximum(Float p, Float q, Float r) {
+        Float max = p;
+
         /*
-        checking the condition and finding maximum no
+        check condition and find max float no
          */
-        if(b.compareTo(a)>0){
-            max = b;
+        if (q.compareTo(p) > 0) {
+            max = q;
         }
-        if(c.compareTo(max)>0){
-            max = c;
+        if (r.compareTo(max) > 0) {
+            max = r;
         }
-        System.out.println("Maximum Number is::"+max);
+
+        //print maximum float no.
+        System.out.println("Maximum Number is: " + max);
+
     }
+
 }
