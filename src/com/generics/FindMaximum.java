@@ -1,62 +1,39 @@
 package com.generics;
 
 // create generic class
-public class FindMaximum<T extends Comparable> {
-    T var1, var2, var3;
+public class FindMaximum <T extends Comparable<T>> {
 
-    /*
-     *create constructor
-     * If we want to initialize fields of the class with our own values, then use a parameterized constructor.
-     */
+    // create genterics maxmumValue method and passing parameters
 
-    public FindMaximum(T var1, T var2, T var3) {
-        this.var1 = var1;
-        this.var2 = var2;
-        this.var3 = var3;
+    public static <T extends  Comparable <T>>  T maximumValue( T val1 , T val2, T val3 ,T val4,T val5) {
+
+        T max = val1;
+
+        /*
+        check condition
+         */
+        if (val2.compareTo(max) > 0 ) {
+            max = val2;
+        } if (val3.compareTo(max) > 0){
+            max = val3;
+        }if (val4.compareTo(max) > 0 ){
+            max = val4;
+        }if (val5.compareTo(max) > 0){
+            max = val5;
+
+        }
+        return max;
     }
-
-    //main method
 
     public static void main(String[] args) {
 
-        // 1st print welcome msg
-        System.out.println("Welcome to Generic Program.");
+// create object for FindMaximum class object name is max
 
-        // taking variables for integer float string
-        Integer a = 20, b = 50, c = 80;
-        Float p = 20.85f, q = 90.55f, r = 80.98f;
-        String e = "Apple", f = "Peach", g = "Banana";
+        FindMaximum max = new FindMaximum();
 
+        //print maximum value
+        System.out.println( "The maximum value is :: "+maximumValue(2.5f,3.5f,4.5f,5.5f,6.5f));
 
-        new FindMaximum<>(a, b, c).max();
-        new FindMaximum<>(p, q, r).max();
-        new FindMaximum<>(e, f, g).max();
-    }
-
-    // create max method
-     private void max() {
-        FindMaximum.getMaximum(var1, var2, var3);
-
-    }
-
-    /*
-     create generic method the Generic Type extends Comparable
-     */
-
-    private static <T extends Comparable> void getMaximum(T a, T b, T c) {
-
-        T max = a;
-        if (b.compareTo(a) > 0) {
-            max = b;
-        }
-        if (c.compareTo(max) > 0) {
-            max = c;
-        }
-
-        //print maximum no and string
-
-        System.out.println("Maximum ::" + max);
 
     }
 }
-
