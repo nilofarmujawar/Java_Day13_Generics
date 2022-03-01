@@ -7,7 +7,7 @@ public class FindMaximum {
         System.out.println("Welcome to Find Maximum Problem using Generics");
 
         //take variables strings
-        String e = "Ahmednagar", f = "Pune" , g = "Mumbai";
+        String e = "Apple", f = "Peach" , g = "Banana";
 
         /*
         calling directly without creating object coz testMaximum method also static.
