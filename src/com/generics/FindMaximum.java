@@ -23,16 +23,16 @@ public class FindMaximum<T extends Comparable<T>> {
     // create generic method and passing paramerter
     public static <T extends Comparable<T>> T maximumValue(T val1, T val2, T val3, T val4, T val5) {
 
-        T max = val1;
+        T max = val1;  //Initializing val1 as greater.
 
         /*
         checking condition and finding max no
          */
         if (val2.compareTo(max) > 0) {
-            max = val2;
+            max = val2;     //as of now val2 is greater.
         }
-        if (val3.compareTo(max) > 0) {
-            max = val3;
+        if (val3.compareTo(max) > 0) {        //same as for all condition 
+            max = val3;    
         }
         if (val4.compareTo(max) > 0) {
             max = val4;
@@ -45,7 +45,7 @@ public class FindMaximum<T extends Comparable<T>> {
         return max;
     }
 
-    // create method printMax and passing parameter
+    // create generics method printMax and passing parameter
     private static <T> void printMax(T val1, T val2, T val3, T max) {
 
         //print the max value
@@ -54,8 +54,8 @@ public class FindMaximum<T extends Comparable<T>> {
 
     public static void main(String[] args) {
         System.out.println("*******welcome to generics code ***** ");
-        maximumValue(2, 3, 4, 5, 6);
-        maximumValue(3.5f, 4.7f, 1.2f, 6.8f, 5.5f);
+        maximumValue(2, 3, 4, 5, 6);  //calling method for getting max integer
+        maximumValue(3.5f, 4.7f, 1.2f, 6.8f, 5.5f);  //calling method for getting max float no
         new FindMaximum<>(3, 4, 5, 6, 7).maximumValue();
 
     }
